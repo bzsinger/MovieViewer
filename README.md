@@ -41,7 +41,6 @@ GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
 ## Notes
 
-Describe any challenges encountered while building the app.
 I attempted to add a feature that would allow a user to click on a movie cell and get more information about a movie. I had difficulty segueing between views and had to abandon feature.
 
 ## License

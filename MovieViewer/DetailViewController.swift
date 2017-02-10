@@ -16,6 +16,9 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var infoView: UIView!
     
+    @IBOutlet weak var ratingImage: UIImageView!
+    @IBOutlet weak var rating: UILabel!
+    
     var movie: NSDictionary!
     var sender: String!
     
@@ -26,10 +29,20 @@ class DetailViewController: UIViewController {
         overviewLabel.text = movie["overview"] as? String
         overviewLabel.sizeToFit()
         titleLabel.sizeToFit()
-
+        
+        let rawRating = movie["vote_average"] as? Double
+        rating.text = "\(Int(rawRating!) * 10)%"
+        
+        if rawRating! >= 6.0 {
+            ratingImage.image = #imageLiteral(resourceName: "fresh")
+        }
+        else {
+            ratingImage.image = #imageLiteral(resourceName: "rotten")
+        }
+            
         infoView.frame.size.height = (10 * overviewLabel.frame.size.height) + titleLabel.frame.size.height
 
-        scrollView.contentSize = CGSize(width: infoView.frame.size.width, height: infoView.frame.origin.y + overviewLabel.frame.size.height + (5.75 * (self.tabBarController?.tabBar.frame.size.height)!))
+        scrollView.contentSize = CGSize(width: infoView.frame.size.width, height: infoView.frame.origin.y + overviewLabel.frame.size.height + (6.25 * (self.tabBarController?.tabBar.frame.size.height)!))
         scrollView.showsVerticalScrollIndicator = false
         
         self.navigationItem.title = movie["title"] as? String

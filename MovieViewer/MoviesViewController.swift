@@ -25,8 +25,17 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        if endpoint == "top_rated" {
+            self.navigationItem.title = "Top Rated"
+        }
+        else {
+            self.navigationItem.title = "Now Playing"
+        }
         
         refreshControl.addTarget(self, action: #selector(refreshControlAction(_:)), for: UIControlEvents.valueChanged)
+        refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
+        
         tableView.insertSubview(refreshControl, at: 0)
         
         tableView.dataSource = self

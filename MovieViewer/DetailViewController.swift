@@ -30,10 +30,13 @@ class DetailViewController: UIViewController {
         overviewLabel.sizeToFit()
         titleLabel.sizeToFit()
         
-        let rawRating = movie["vote_average"] as? Double
-        rating.text = "\(Int(rawRating!) * 10)%"
+        var rawRating = movie["vote_average"] as? Double
+        if (rawRating! > 8.0) {rawRating = 8.0}
         
-        if rawRating! >= 6.0 {
+        let adjustedRating = (rawRating! / 8.0) * 100
+        rating.text = "\(Int(adjustedRating))%"
+        
+        if adjustedRating >= 80 {
             ratingImage.image = #imageLiteral(resourceName: "fresh")
         }
         else {

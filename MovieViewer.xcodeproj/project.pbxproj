@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3B418A851E4D47C700845709 /* InternetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B418A841E4D47C700845709 /* InternetViewController.swift */; };
 		3B71774F1E493CB8000335FC /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B71774E1E493CB8000335FC /* DetailViewController.swift */; };
 		3BF6B64A1E47E48E006BDF42 /* List.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BF6B6491E47E48E006BDF42 /* List.png */; };
 		3BF6B64D1E47E5C6006BDF42 /* Collection.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3BF6B64C1E47E5C6006BDF42 /* Collection.jpg */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3B418A841E4D47C700845709 /* InternetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InternetViewController.swift; sourceTree = "<group>"; };
 		3B71774E1E493CB8000335FC /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		3BF6B6491E47E48E006BDF42 /* List.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = List.png; sourceTree = "<group>"; };
 		3BF6B64C1E47E5C6006BDF42 /* Collection.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Collection.jpg; sourceTree = "<group>"; };
@@ -103,6 +105,7 @@
 			children = (
 				3BF88E2D1E3FDEB0001E37B8 /* MoviesViewController.swift */,
 				3B71774E1E493CB8000335FC /* DetailViewController.swift */,
+				3B418A841E4D47C700845709 /* InternetViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -254,6 +257,7 @@
 				3BF88E2E1E3FDEB0001E37B8 /* MoviesViewController.swift in Sources */,
 				3BF88E311E3FE6FA001E37B8 /* MovieCell.swift in Sources */,
 				3B71774F1E493CB8000335FC /* DetailViewController.swift in Sources */,
+				3B418A851E4D47C700845709 /* InternetViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

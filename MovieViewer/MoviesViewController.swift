@@ -41,10 +41,13 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
 
     func getMovieData(refresh: Bool) {
         if !isInternetAvailable() {
+            if refresh {
+                refreshControl.endRefreshing()
+            }
             self.performSegue(withIdentifier: "internet", sender: self)
         }
         
-        if (!refresh) {
+        if !refresh {
             MBProgressHUD.showAdded(to: self.view, animated: true)
         }
         
@@ -150,6 +153,10 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "internet") {
+            return
+        }
+        
         let cell = sender as! UITableViewCell
         let indexPath = tableView.indexPath(for: cell)
         let movie = movies![indexPath!.row]

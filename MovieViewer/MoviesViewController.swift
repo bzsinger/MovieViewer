@@ -14,6 +14,7 @@ import SystemConfiguration
 class MoviesViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate {
 
 
+    @IBOutlet var tapRecognizer: UITapGestureRecognizer!
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
     var movies: [NSDictionary]?
@@ -35,6 +36,8 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
         
         refreshControl.addTarget(self, action: #selector(refreshControlAction(_:)), for: UIControlEvents.valueChanged)
         refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
+        
+        tapRecognizer.isEnabled = false
         
         tableView.insertSubview(refreshControl, at: 0)
         
@@ -115,12 +118,11 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
             cell.posterView.setImageWith(imageUrl! as URL)
         }
         
-        cell.selectionStyle = .none
-        
         return cell
     }
 
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        tapRecognizer.isEnabled = true
         if (searchText.isEmpty || movies == nil) {
             filteredMovies = movies
         } else {
@@ -136,6 +138,12 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        tapRecognizer.isEnabled = false
+        self.view.endEditing(true)
+    }
+    
+    @IBAction func wasTapped(_ sender: Any) {
+        tapRecognizer.isEnabled = false
         self.view.endEditing(true)
     }
     
@@ -168,10 +176,10 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
         
         let cell = sender as! UITableViewCell
         let indexPath = tableView.indexPath(for: cell)
-        let movie = movies![indexPath!.row]
+        let movie = filteredMovies![indexPath!.row]
         
         let detailViewController = segue.destination as! DetailViewController
         detailViewController.movie = movie
-        
+        tableView.deselectRow(at: indexPath!, animated: true)
      }
 }

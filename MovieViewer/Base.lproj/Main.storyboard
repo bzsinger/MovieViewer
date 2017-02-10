@@ -90,15 +90,24 @@
                             <constraint firstAttribute="trailing" secondItem="1uK-Mc-W8R" secondAttribute="trailing" id="j1e-C4-lGP"/>
                             <constraint firstItem="1uK-Mc-W8R" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="nFF-Rz-3Wi"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="ScD-gY-IQO" appends="YES" id="6Cq-NY-ZJl"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" title="Movies" id="Jar-m2-8Yq"/>
                     <connections>
                         <outlet property="searchBar" destination="bCv-Aq-6cP" id="6Hn-y1-oeZ"/>
                         <outlet property="tableView" destination="1uK-Mc-W8R" id="kGy-mP-YY5"/>
+                        <outlet property="tapRecognizer" destination="ScD-gY-IQO" id="YdR-fT-N8O"/>
                         <segue destination="crH-qJ-YES" kind="modal" identifier="internet" id="Cg6-40-9re"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="ScD-gY-IQO">
+                    <connections>
+                        <action selector="wasTapped:" destination="BYZ-38-t0r" id="J1W-P2-6qo"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="672.5" y="152.5"/>
         </scene>

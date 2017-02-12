@@ -71,7 +71,7 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
             if let data = data {
                 if let dataDictionary = try! JSONSerialization.jsonObject(with: data, options: []) as? NSDictionary {
                     MBProgressHUD.hide(for: self.view, animated: true)
-                    self.movies = dataDictionary["results"] as! [NSDictionary]
+                    self.movies = dataDictionary["results"] as? [NSDictionary]
                     if (!refresh) { self.filteredMovies = self.movies }
                     self.tableView.reloadData()
                 }
@@ -81,6 +81,7 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
             refreshControl.endRefreshing()
         }
         task.resume()
+        
     }
     
     func refreshControlAction(_ refreshControl: UIRefreshControl) {

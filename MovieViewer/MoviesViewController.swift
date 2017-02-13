@@ -81,7 +81,6 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
             refreshControl.endRefreshing()
         }
         task.resume()
-        
     }
     
     func refreshControlAction(_ refreshControl: UIRefreshControl) {

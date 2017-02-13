@@ -1,47 +1,51 @@
-# Project 1 - MovieViewer
+Project 2 - MovieViewer
 
-MovieViewer is a movies app using the [The Movie Database API](http://docs.themoviedb.apiary.io/#).
+MovieViewer is a movies app displaying box office and top rental DVDs using [The Movie Database API](http://docs.themoviedb.apiary.io/#).
 
 Time spent: 10 hours spent in total
 
 ## User Stories
 
-The following **required** functionality is complete:
+The following **required** functionality is completed:
 
-- [X] User can view a list of movies currently playing in theaters from The Movie Database.
-- [X] Poster images are loaded using the UIImageView category in the AFNetworking library.
-- [X] User sees a loading state while waiting for the movies API.
-- [X] User can pull to refresh the movie list.
+- [X] User can view movie details by tapping on a cell.
+- [X] User can select from a tab bar for either **Now Playing** or **Top Rated** movies.
+- [X] Customize the selection effect of the cell.
 
 The following **optional** features are implemented:
 
-- [ ] User sees an error message when there's a networking error.
-- [X] Movies are displayed using a CollectionView instead of a TableView.
-- [X] User can search for a movie.
-- [X] All images fade in as they are loading.
-- [X] Customize the UI.
+- [X] For the large poster, load the low resolution image first and then switch to the high resolution image when complete.
+- [X] Customize the navigation bar.
 
 The following **additional** features are implemented:
 
-- [X] Added tab bar navigation to switch between table and collection views 
-- [X] App can run on physical device
+- [X] Show movie ratings and release dates
+- [X] Added internet connectivity view 
+
+Additional UI features:
+
+- [X] Movie overview automatically resizes
+- [X] Tomato image based on movie rating
+- [X] Removed scroll bar, curved movie info view
+- [X] "Pull to refresh" message
+- [X] Tap gesture recognizer allows user to scroll through search results
 
 Please list two areas of the assignment you'd like to **discuss further with your peers** during the next class (examples include better ways to implement something, how to extend your app in certain ways, etc):
 
-1. Click on TableView cell and open new view 
-2. Cull more data from The Movie Database (add ratings, sort by different metrics)
+1. Reloading view after segue (from modal view)
+2. Popover alerts (to sort movies)
 
 ## Video Walkthrough 
 
 Here's a walkthrough of implemented user stories:
 
-<img src='http://i.imgur.com/igygt0n.gif' 'title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='http://i.imgur.com/U27LFBo.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
 ## Notes
 
-I attempted to add a feature that would allow a user to click on a movie cell and get more information about a movie. I had difficulty segueing between views and had to abandon feature.
+Describe any challenges encountered while building the app.
 
 ## License
 
@@ -57,4 +61,4 @@ I attempted to add a feature that would allow a user to click on a movie cell an
     distributed under the License is distributed on an "AS IS" BASIS,
     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
     See the License for the specific language governing permissions and
-    limitations under the License. 
+    limitations under the License.

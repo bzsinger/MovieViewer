@@ -5,6 +5,7 @@ MovieViewer is a movies app displaying box office and top rental DVDs using [The
 ## Video Walkthrough 
 
 Here's a walkthrough of implemented user stories:
+
 ![MovieViewer Video Walkthrough](https://github.com/bzsinger/MovieViewer/blob/master/walkthrough.gif)
 
 ## User Stories
